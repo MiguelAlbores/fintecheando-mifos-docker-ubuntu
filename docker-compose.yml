@@ -5,7 +5,7 @@ networks:
     driver: bridge
 services:
   mifosx:
-    image: fintecheando/com.mx.fintecheando.mifosx.18.03.01
+    image: fintecheando/com.mx.conserva.mifosx.18.03.01
     restart: always
     ports:
       - 8443:8443
@@ -17,7 +17,7 @@ services:
       mifos-sms-server:
         condition: service_healthy    
   mifos-db-server:
-    image: fintecheando/com.mx.fintecheando.mysql.mifosx.18.03.01
+    image: fintecheando/com.mx.conserva.mysql.mifosx.18.03.01
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: mysql
@@ -28,7 +28,7 @@ services:
     networks:
       - app-tier  
   mifos-sms-server:
-    image: fintecheando/com.mx.fintecheando.activemq.mifosx.18.03.01
+    image: fintecheando/com.mx.conserva.activemq.mifosx.18.03.01
     restart: always
     environment:
       ACTIVEMQ_CONFIG_MINMEMORY: 512
